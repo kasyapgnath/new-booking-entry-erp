@@ -62,26 +62,35 @@ export default function BookingForm() {
 
   return (
     <>
-     {success && (
-  <div className="fixed top-6 right-6 z-50 bg-green-600 text-white px-5 py-3 rounded-lg shadow-lg text-sm font-medium">
-    Booking Successful
-  </div>
-)}
+      {/* Success Toast */}
+      {success && (
+        <div className="fixed top-6 right-6 z-50 bg-green-600 text-white px-5 py-3 rounded-lg shadow-lg text-sm font-medium">
+          Booking Successful
+        </div>
+      )}
 
+      {/* Page Heading */}
+      <h1 className="max-w-5xl mx-auto mt-16 mb-6 text-center text-xl font-semibold text-gray-800">
+        New Booking Entry
+      </h1>
+
+      {/* Booking Form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-5xl mx-auto mt-16 p-4 space-y-6"
-      > 
+        className="max-w-5xl mx-auto p-4 space-y-6"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <SectionWrapper title="Sender Details">
             <FormInput
               label="Full Name"
+              required
               registration={register("senderName", { required: "Required" })}
               error={errors.senderName?.message}
             />
 
             <FormInput
               label="Mobile Number"
+              required
               registration={register("senderMobile", {
                 required: "Required",
                 pattern: {
@@ -107,12 +116,14 @@ export default function BookingForm() {
           <SectionWrapper title="Receiver Details">
             <FormInput
               label="Full Name"
+              required
               registration={register("receiverName", { required: "Required" })}
               error={errors.receiverName?.message}
             />
 
             <FormInput
               label="Full Address"
+              required
               textarea
               registration={register("receiverAddress", { required: "Required" })}
               error={errors.receiverAddress?.message}
@@ -124,6 +135,7 @@ export default function BookingForm() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <FormInput
               label="Weight (kg)"
+              required
               type="number"
               registration={register("weight", {
                 required: "Required",
@@ -135,6 +147,7 @@ export default function BookingForm() {
 
             <FormInput
               label="Rate per kg (INR)"
+              required
               type="number"
               registration={register("rate", {
                 required: "Required",
