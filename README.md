@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# New Booking Entry – Logistics ERP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a **New Booking Entry screen** for a Logistics ERP system.  
+It is designed for **office administrators** to quickly and accurately enter shipment details with proper validation and immediate feedback.
 
-Currently, two official plugins are available:
+The UI follows **ERP principles**: simple, clean, data-focused, and efficient.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+##  Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** (with TypeScript)
+- **Vite**
+- **Tailwind CSS**
+- **React Hook Form**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##  Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ERP-style data entry form
+- Sender, Receiver, and Package detail sections
+- Auto-calculation of total shipping cost
+- Inline field-level validation
+- Submit button disabled until form is valid
+- Success notification on submission
+- Form resets after successful submission
+- Responsive layout (desktop & mobile)
+- Reusable and type-safe components
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+##  Form Sections
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 1. Sender Details
+- Full Name (required)
+- Mobile Number (required, 10 digits)
+- Email (optional, valid format)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Receiver Details
+- Full Name (required)
+- Full Address (required)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 3. Package Details
+- Weight (kg) (required, > 0)
+- Rate per kg (INR) (required)
+- Total Shipping Cost (auto-calculated, read-only)
+
+---
+
+##  Responsive Behavior
+
+- **Desktop**: Sender and Receiver sections appear side-by-side
+- **Mobile**: All sections stack vertically for better readability
+
+---
+
+##  Submission Behavior
+
+- On submit:
+  - Final form data is logged to the console
+  - A “Booking Successful” notification is shown
+  - The form is cleared for the next entry
+- No backend integration (as per requirements)
+
+---
+
+##  Installation & Running Locally
+
+```bash
+npm install
+npm run dev
+
+---
+
+##  Screenshot (Desktop View)
+
+![Desktop View](screenshots/desktop-view.png)
+
+
