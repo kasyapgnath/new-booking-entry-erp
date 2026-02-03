@@ -62,19 +62,16 @@ export default function BookingForm() {
 
   return (
     <>
-      {/* Success Toast */}
       {success && (
         <div className="fixed top-6 right-6 z-50 bg-green-600 text-white px-5 py-3 rounded-lg shadow-lg text-sm font-medium">
           Booking Successful
         </div>
       )}
 
-      {/* Page Heading */}
       <h1 className="max-w-5xl mx-auto mt-16 mb-6 text-center text-xl font-semibold text-gray-800">
         New Booking Entry
       </h1>
 
-      {/* Booking Form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-5xl mx-auto p-4 space-y-6"
