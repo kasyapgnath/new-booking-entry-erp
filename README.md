@@ -69,7 +69,7 @@ The UI follows **ERP principles**: simple, clean, data-focused, and efficient.
 
 ```bash
 npm install
-npm run dev
+npm run dev```
 
 
 
