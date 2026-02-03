@@ -65,10 +65,12 @@ The UI follows **ERP principles**: simple, clean, data-focused, and efficient.
 
 ---
 
-##  Installation & Running Locally
+## ⚙️ Installation & Running Locally
 
 ```bash
 npm install
 npm run dev
+
+
 
 
