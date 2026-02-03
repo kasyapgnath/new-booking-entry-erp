@@ -71,10 +71,4 @@ The UI follows **ERP principles**: simple, clean, data-focused, and efficient.
 npm install
 npm run dev
 
----
-
-##  Screenshot (Desktop View)
-
-![Desktop View](screenshots/desktop-view.png)
-
 
