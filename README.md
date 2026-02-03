@@ -72,5 +72,18 @@ npm install
 npm run dev```
 
 
+### 🟢 ADD THESE LINES IMMEDIATELY AFTER
+
+```md
+The application will run at:
+http://localhost:5173/
+
+
+---
+
+## 📷 Screenshot (Desktop View)
+
+![Desktop View](screenshots/desktop-view.png)
+
 
 
